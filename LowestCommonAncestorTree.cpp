@@ -1,10 +1,8 @@
-//verified at 'https://beta.atcoder.jp/contests/abc014/submissions/1918746'
-//LCA
-struct LCA {
+struct LowestCommonAncestorTree {
         const int LOGM = 30;
         vector<int> depth;
         vector<vector<int>> parent;
-        LCA(int root, const vector<vector<int>> &g) {
+        LowestCommonAncestorTree(int root, const vector<vector<int>> &g) {
                 int n = g.size();
                 depth.resize(n);
                 parent.resize(LOGM);
@@ -42,4 +40,3 @@ struct LCA {
                 return depth[u] + depth[v] - 2 * depth[lca(u, v)];
         }
 };
-//
