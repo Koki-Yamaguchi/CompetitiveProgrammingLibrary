@@ -1,4 +1,4 @@
-struct state { int y, x; }
+struct state { int y, x; };
 static const int dx[] = {1, 0, -1, 0}, dy[] = {0, 1, 0, -1};
         vector<vector<int>> used(h, vector<int> (w, -1));
         queue<state> q;

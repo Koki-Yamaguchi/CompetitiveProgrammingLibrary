@@ -9,8 +9,9 @@ struct LazySegmentTree {
         }
         void add(int a, int b, int x) { add(a, b, x, 0, 0, n); }
         void add(int a, int b, int x, int k, int l, int r) {
-                if (a <= l && r <= b) data[k] += x;
-                else if (l < b && a < r) {
+                if (b <= l || r <= a) return;
+                else if (a <= l && r <= b) data[k] += x;
+                else {
                         lazy[k] += (min(b, r) - max(a, l)) * x;
                         add(a, b, x, k * 2 + 1, l, (l + r) / 2);
                         add(a, b, x, k * 2 + 2, (l + r) / 2, r);

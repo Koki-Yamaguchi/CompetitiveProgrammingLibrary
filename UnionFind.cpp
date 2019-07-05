@@ -1,8 +1,6 @@
 struct UnionFind {
         int n;
-        vector<int> parent;
-        vector<int> rank;
-        vector<int> num;
+        vector<int> parent, rank, num;
         int find(int x) {
                 if (parent[x] == x) return  x;
                 return parent[x] = find(parent[x]);
